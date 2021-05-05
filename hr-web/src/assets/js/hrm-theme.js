@@ -13,6 +13,7 @@ $(".form-control").on("blur",function(){
 
 
 $("#show-hide-menu").click(function(){
+	debugger
   $(".page-area").toggleClass("full-menu-active");
 });
 $(".collapse-title").click(function(){

@@ -1,0 +1,54 @@
+<div class="left-menu">					
+    <ul class="navbar-left panel-group" id="accordion">
+        <li class="nav-item panel">
+            <a href="dashboard.html" class="nav-link active" title="Dashboard">
+                <i class="pe-7s-home"></i>
+                <span class="nav-name">Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item panel">
+            <a href="javascript:void(0)" class="nav-link collapse-title collapsed" title="Accounting" data-toggle="collapse" data-target="#collapse-accounting" aria-expanded="true" aria-controls="collapse-accounting">
+                <i class="pe-7s-cash"></i>
+                <span class="nav-name">Single Level</span>
+                <span class="arrow-icon"></span>
+            </a>
+            <div id="collapse-accounting" class="panel-collapse collapse" data-parent="#accordion">
+                <ul class="nav nav-second-level">
+                    <li><a href="table-theme.html">Table Theme</a></li>
+                    <li><a href="form-theme.html">Form Theme</a></li>
+                    <li><a href="javascript:void(0)">Sub Menu 1</a></li>
+                </ul>
+            </div>
+        </li>  
+        <li class="nav-item panel">
+            <a href="javascript:void(0)" class="nav-link collapse-title collapsed" title="Settings" data-toggle="collapse" data-target="#collapse-settings" aria-expanded="true" aria-controls="collapse-settings">
+                <i class="pe-7s-keypad"></i>
+                <span class="nav-name">Double Level</span>
+                <span class="arrow-icon"></span>
+            </a>
+            <div id="collapse-settings" class="panel-collapse collapse" data-parent="#accordion">
+                <ul class="nav nav-second-level panel-group" id="settings-accordion">
+                    <li>
+                        <a href="javascript:void(0" class="sub-collapse collapsed" data-toggle="collapse" data-target="#collapse-settings-log" aria-expanded="true" aria-controls="collapse-settings-log">Sub Menu 1 <span class="arrow-icon"></span></a>
+                        <div id="collapse-settings-log" class="collapse-settings panel-collapse collapse" data-parent="#settings-accordion">
+                            <ul class="nav nav-second-level">
+                                <li><a href="javascript:void(0)">Sub Menu 2</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="javascript:void(0)">Sub Menu 1</a></li>
+                    <li>
+                        <a href="javascript:void(0" class="sub-collapse collapsed" data-toggle="collapse" data-target="#collapse-server-settings" aria-expanded="true" aria-controls="collapse-server-settings">Sub Menu 1 <span class="arrow-icon"></span></a>
+                        <div id="collapse-server-settings" class="collapse-settings panel-collapse collapse" data-parent="#settings-accordion">
+                            <ul class="nav nav-second-level">
+                                <li><a href="javascript:void(0)">Sub Menu 2</a></li>
+                                <li><a href="javascript:void(0)">Sub Menu 2</a></li>
+                                <li><a href="javascript:void(0)">Sub Menu 2</a></li> 
+                            </ul>
+                        </div>
+                    </li> 
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>
