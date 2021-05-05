@@ -39,7 +39,7 @@ export class LoginComponent  {
     )
     .subscribe(
       (credentials: any) => {
-        this.router.navigateByUrl('/dashboard');
+        this.router.navigateByUrl('/admin');
       },
       (error: any) => {
         // this.error = error;

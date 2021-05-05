@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
-import { EmployeeService } from 'src/app/core/services/employee.service';
+import { DashboardService } from 'src/app/core/services/dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,10 +10,10 @@ import { EmployeeService } from 'src/app/core/services/employee.service';
 export class DashboardComponent implements OnInit {
   private users$: any;
 
-  constructor(private employeeService: EmployeeService) {
+  constructor(private dashboardService: DashboardService) {
     debugger
-    this.users$ = this.employeeService
-    .getFullEligibility()
+    this.users$ = this.dashboardService
+    .getEmployees()
     .pipe(
       finalize(() => {
         // this.loginForm.markAsPristine();

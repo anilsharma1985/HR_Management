@@ -12,7 +12,7 @@ const routes = {
 @Injectable({
   providedIn: 'root',
 })
-export class EmployeeService {
+export class DashboardService {
   constructor(private httpClient: HttpClient) {}
 
   /**
@@ -20,12 +20,12 @@ export class EmployeeService {
    * @param context The eligibility parameters.
    * @return The patient eligibility.
    */
-  getFullEligibility(): Observable<user> {
+  getEmployees(): Observable<user> {
       debugger
     return this.httpClient.get(`${routes.eligibilityUrl}/user/all`).pipe(
       map((result: any) => result),
       catchError((err: any) => {
-        console.log('Error while getting list of eligibility : ', err);
+        console.log('Error while getting list of employees : ', err);
         return of(`${err.status}`);
       })
     );
