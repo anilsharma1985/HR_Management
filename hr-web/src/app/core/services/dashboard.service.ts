@@ -15,11 +15,6 @@ const routes = {
 export class DashboardService {
   constructor(private httpClient: HttpClient) {}
 
-  /**
-   * Returns the full eligibility of patient.
-   * @param context The eligibility parameters.
-   * @return The patient eligibility.
-   */
   getEmployees(): Observable<user> {
       debugger
     return this.httpClient.get(`${routes.eligibilityUrl}/user/all`).pipe(
