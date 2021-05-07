@@ -106,6 +106,20 @@ namespace hr_api.Controllers
                 return BadRequest(new { message = ex.Message });
             }
         }
+
+        [AllowAnonymous]
+
+        [HttpPost("signup")]
+        public IActionResult Signup([FromBody] RegisterModel model)
+        {
+            return Ok(new
+            {
+                Id = 2,
+
+            });
+        }
+
+
         [Authorize]
         [HttpPost("saveuser")]
         public ActionResult<string> saveuser([FromBody] RegisterModel model)
@@ -115,6 +129,6 @@ namespace hr_api.Controllers
             var rng = new Random();
             return "";
         }
-        
+
     }
 }

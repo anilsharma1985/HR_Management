@@ -20,8 +20,9 @@ export class SignupComponent implements OnInit {
   };
   private initForm() {
     return this.fb.group({
-      userName: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(4)]],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      Email: ['', [Validators.required, Validators.minLength(4)]],
     });
   }
 }
