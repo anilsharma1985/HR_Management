@@ -6,10 +6,11 @@ import { AuthenticationSidebarComponent } from './components/authentication/auth
 import { AuthenticationMidbarComponent } from './components/authentication/authentication-midbar/authentication-midbar.component';
 import { AdminHeaderComponent } from './components/admin/admin-header/admin-header.component';
 import { AdminSidebarComponent } from './components/admin/admin-sidebar/admin-sidebar.component';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
-  imports: [AngularMaterialModule],
-  declarations: [
+    declarations: [
     HeaderPublicComponent,
     FooterPublicComponent,
     AuthenticationSidebarComponent,
@@ -17,6 +18,8 @@ import { AdminSidebarComponent } from './components/admin/admin-sidebar/admin-si
     AdminHeaderComponent,
     AdminSidebarComponent,
   ],
+  imports: [CommonModule, AngularMaterialModule, RouterModule],
+
   exports: [
     HeaderPublicComponent,
     FooterPublicComponent,

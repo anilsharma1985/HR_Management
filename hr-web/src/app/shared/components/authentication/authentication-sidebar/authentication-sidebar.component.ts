@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./authentication-sidebar.component.css']
 })
 export class AuthenticationSidebarComponent implements OnInit {
+  itemclicked: string = 'login';
 
   constructor() { }
 

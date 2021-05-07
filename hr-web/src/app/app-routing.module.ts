@@ -20,7 +20,7 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'login',
+    path: 'auth',
     component: AuthContainerComponent,
     children: [
       {

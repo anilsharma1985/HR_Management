@@ -1,7 +1,26 @@
 <div class="login-left">
-    <div class="login-left-bg" style="background-image: url(assets/images/login.jpg);"></div>
-    <ul class="login-top-buttons">
-        <li><a href="index.html" class="btn btn-login-white active">Login</a></li>
-        <li><a href="register.html" class="btn btn-login-white">Signup</a></li> 
-    </ul>
+  <div
+    class="login-left-bg"
+    style="background-image: url(assets/images/login.jpg)"
+  ></div>
+  <ul class="login-top-buttons">
+    <li>
+      <a
+        routerLink="/auth/login"
+        (click)="itemclicked = 'login'"
+        class="btn btn-login-white"
+        [ngClass]="{ active: itemclicked == 'login' }"
+        >Login
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/auth/signup"
+        (click)="itemclicked = 'signup'"
+        class="btn btn-login-white"
+        [ngClass]="{ active: itemclicked == 'signup' }"
+        >Signup
+      </a>
+    </li>
+  </ul>
 </div>

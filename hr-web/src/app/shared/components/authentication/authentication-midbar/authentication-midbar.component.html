@@ -1,7 +1,21 @@
 <div class="login-logo">
-    <img src="assets/images/logo.png">
+  <img src="assets/images/logo.png" />
 </div>
 <ul class="login-top-buttons mobile-login-top-buttons">
-    <li><a href="index.html" class="btn btn-login-white active">Login</a></li>
-    <li><a href="register.html" class="btn btn-login-white">Signup</a></li> 
+  <li>
+    <a
+      href="index.html"
+      (click)="itemclicked = 'login'"
+      class="btn btn-login-white active"
+      >Login</a
+    >
+  </li>
+  <li>
+    <a
+      href="register.html"
+      (click)="itemclicked = 'signup'"
+      class="btn btn-login-white"
+      >Signup</a
+    >
+  </li>
 </ul>
