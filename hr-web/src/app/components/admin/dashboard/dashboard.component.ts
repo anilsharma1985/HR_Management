@@ -9,31 +9,36 @@ import { DashboardService } from 'src/app/core/services/dashboard.service';
 })
 export class DashboardComponent implements OnInit {
   private users$: any;
+  public allusers: any[];
 
   constructor(private dashboardService: DashboardService) {
-    debugger
+    debugger;
     this.users$ = this.dashboardService
-    .getEmployees()
-    .pipe(
-      finalize(() => {
-        // this.loginForm.markAsPristine();
-        // this.isLoading = false;
-      }),
-      // untilDestroyed(this)
-    )
-    .subscribe(
-      (credentials: any) => {
-        // log.debug(`${credentials.usernameOrEmail} successfully logged in`);
-        // this.authenticationService.setIsNextStep(true);
-        // RouteProtect.isNextStep = true;
-        // this.router.navigateByUrl('/dashboard');
-      },
-      (error: any) => {
-        // log.debug(`Login error: ${error.message}`);
-        // this.error = error;
-      }
-    );
+      .getEmployees()
+      .pipe(
+        finalize(() => {
+          // this.loginForm.markAsPristine();
+          // this.isLoading = false;
+        })
+        // untilDestroyed(this)
+      )
+      .subscribe(
+        (user: any) => {
+          debugger;
+          this.allusers = user;
+          // log.debug(`${credentials.usernameOrEmail} successfully logged in`);
+          // this.authenticationService.setIsNextStep(true);
+          // RouteProtect.isNextStep = true;
+          // this.router.navigateByUrl('/dashboard');
+        },
+        (error: any) => {
+          // log.debug(`Login error: ${error.message}`);
+          // this.error = error;
+        }
+      );
   }
-
+  loadPaging(event){
+    debugger
+  }
   ngOnInit(): void {}
 }

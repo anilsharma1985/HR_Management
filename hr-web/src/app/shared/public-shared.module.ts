@@ -8,6 +8,7 @@ import { AdminHeaderComponent } from './components/admin/admin-header/admin-head
 import { AdminSidebarComponent } from './components/admin/admin-sidebar/admin-sidebar.component';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { PagingComponent } from './common/paging/paging.component';
 
 @NgModule({
     declarations: [
@@ -17,6 +18,7 @@ import { CommonModule } from '@angular/common';
     AuthenticationMidbarComponent,
     AdminHeaderComponent,
     AdminSidebarComponent,
+    PagingComponent,
   ],
   imports: [CommonModule, AngularMaterialModule, RouterModule],
 
@@ -27,6 +29,7 @@ import { CommonModule } from '@angular/common';
     AuthenticationMidbarComponent,
     AdminHeaderComponent,
     AdminSidebarComponent,
+    PagingComponent,
   ],
 })
 export class PublicSharedModule {}

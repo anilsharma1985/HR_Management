@@ -3,14 +3,80 @@
     <div class="page-header">
       <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-          <div class="page-header-title">Dashboard</div>
+          <div class="page-header-title">User</div>
         </div>
       </div>
     </div>
     <div class="inner-page-body">
-      <div class="dashboard-page">
-        <p>Coming Soon</p>
+      <div class="search-field search-field-theme page-top-action">
+        <div class="row">
+          <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12">
+            <a
+              href="javascript:void(0)"
+              class="left btn btn-theme"
+              data-toggle="modal"
+              data-target="#add-new-record"
+              ><i class="pe-7s-plus"></i> Add New Record</a
+            >
+          </div>
+        </div>
       </div>
+      <div class="table-responsive">
+        <table class="table table-theme">
+          <thead>
+            <tr>
+              <th width="100">Id #</th>
+              <th width="100">FirstName</th>
+              <th width="100">LastName</th>
+              <th width="100">Email</th>
+              <th width="100">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of allusers">
+              <td>{{ user.id }}</td>
+              <td>{{ user.firstName }}</td>
+              <td>{{ user.lastName }}</td>
+              <td>{{ user.email }}</td>
+              <td>
+                <div class="table-actions">
+                  <a
+                    href="javascript:void(0)"
+                    class="single-action pe-7s-pen"
+                    data-toggle="modal"
+                    data-target="#edit-record"
+                  ></a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <app-paging
+        [totalRecords]="10"
+        (onPageChange)="loadPaging($event)"
+      ></app-paging>
+      <!-- <div class="pagination-theme">
+        <ul>
+          <li><a href="javascript:void(0)">First</a></li>
+          <li>
+            <a href="javascript:void(0)"
+              ><i class="pe-7s-angle-left" aria-hidden="true"></i
+            ></a>
+          </li>
+          <li class="active"><a href="javascript:void(0)">1</a></li>
+          <li><a href="javascript:void(0)">2</a></li>
+          <li><a href="javascript:void(0)">3</a></li>
+          <li><a href="javascript:void(0)">4</a></li>
+          <li><a href="javascript:void(0)">5</a></li>
+          <li>
+            <a href="javascript:void(0)"
+              ><i class="pe-7s-angle-right" aria-hidden="true"></i
+            ></a>
+          </li>
+          <li><a href="javascript:void(0)">Last</a></li>
+        </ul>
+      </div> -->
     </div>
   </div>
 </div>
