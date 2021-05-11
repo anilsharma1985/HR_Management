@@ -75,7 +75,8 @@ export class PagingComponent implements OnChanges {
   }
 
   onPageSizeSelected(perPage: any) {
-    this.pageModel.page=1;
+    this.pageModel.page = 1;
+    this.activePage = 1;
     this.pageModel.itemsPerPage = +perPage.target.value;
     this.recordsPerPage = this.pageModel.itemsPerPage;
     this.onPageChange.emit(this.pageModel);
