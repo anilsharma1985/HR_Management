@@ -15,14 +15,20 @@ const routes = {
 export class DashboardService {
   constructor(private httpClient: HttpClient) {}
 
-  getEmployees(): Observable<user> {
+  getEmployees(page: number, limit: number): Observable<user> {
     debugger;
     const opts = {
-      params: new HttpParams({ fromString: '_page=1&_limit=10' }),
+      params: new HttpParams({ fromString: '_page=1&_limit=2' }),
     };
+    // const params = new HttpParams().set('_page', page).set('_limit', limit);
 
     return this.httpClient
-      .get(`${routes.eligibilityUrl}/user/getUser`, opts)
+      .get(`${routes.eligibilityUrl}/user/getUser`, {
+        params: {
+          _page: page.toString(),
+          _limit: limit.toString(),
+        },
+      })
       .pipe(
         map((result: any) => result),
         catchError((err: any) => {

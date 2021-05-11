@@ -13,8 +13,11 @@ export class DashboardComponent implements OnInit {
 
   constructor(private dashboardService: DashboardService) {
     debugger;
+  }
+  loadUser(page: number, limit: number) {
+    debugger
     this.users$ = this.dashboardService
-      .getEmployees()
+      .getEmployees(page, limit)
       .pipe(
         finalize(() => {
           // this.loginForm.markAsPristine();
@@ -37,8 +40,9 @@ export class DashboardComponent implements OnInit {
         }
       );
   }
-  loadPaging(event){
-    debugger
+  loadPaging(event) {
+    debugger;
+    this.loadUser(event.page, event.itemsPerPage);
   }
   ngOnInit(): void {}
 }
