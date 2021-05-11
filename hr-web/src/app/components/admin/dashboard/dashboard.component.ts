@@ -10,12 +10,12 @@ import { DashboardService } from 'src/app/core/services/dashboard.service';
 export class DashboardComponent implements OnInit {
   private users$: any;
   public allusers: any[];
-
+  public totalCount: number;
   constructor(private dashboardService: DashboardService) {
     debugger;
   }
   loadUser(page: number, limit: number) {
-    debugger
+    debugger;
     this.users$ = this.dashboardService
       .getEmployees(page, limit)
       .pipe(
@@ -28,7 +28,8 @@ export class DashboardComponent implements OnInit {
       .subscribe(
         (user: any) => {
           debugger;
-          this.allusers = user;
+          this.allusers = user.data;
+          this.totalCount = user.count;
           // log.debug(`${credentials.usernameOrEmail} successfully logged in`);
           // this.authenticationService.setIsNextStep(true);
           // RouteProtect.isNextStep = true;

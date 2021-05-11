@@ -47,7 +47,7 @@ namespace hr_api.Controllers
         }
 
         [HttpGet("getUser")]
-        public ActionResult<IEnumerable<User>> GetUsers([FromQuery] int _page, [FromQuery] int _limit)
+        public IActionResult GetUsers([FromQuery] int _page, [FromQuery] int _limit)
         {
             List<User> list = new List<User>();
             list.Add(new User { FirstName = "Employee 1", LastName = "sharma", Email = "email@gmail.com", Id = 1 });
@@ -63,7 +63,11 @@ namespace hr_api.Controllers
             list.Add(new User { FirstName = "Employee 11", LastName = "sharma", Email = "email10@gmail.com", Id = 11 });
             list.Add(new User { FirstName = "Employee 12", LastName = "sharma", Email = "email11@gmail.com", Id = 12 });
 
-            return list.Skip((_page - 1) * _limit).Take(_limit).ToList();
+            var finallist = list.Skip((_page - 1) * _limit).Take(_limit).ToList();
+            //return new JsonResult { Data = result };
+            return Ok(new { Data = finallist, count = list.Count() });
+
+
         }
         [AllowAnonymous]
 
